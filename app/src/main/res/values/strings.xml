@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LoadingSpinner</string>
+    <string name="title_loadingspinner_detail">LoadingSpinner Detail</string>
+
+</resources>
