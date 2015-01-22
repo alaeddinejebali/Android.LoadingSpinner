@@ -1,4 +1,4 @@
-package com.jebalialaeddine.android.loadingspinner;
+package com.jebalialaeddine.android.loadingspinner.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.jebalialaeddine.android.loadingspinner.R;
 import com.jebalialaeddine.android.loadingspinner.items.Examples;
 
 /**
  * A fragment representing a single LoadingSpinner detail screen.
- * This fragment is either contained in a {@link LoadingSpinnerListActivity}
- * in two-pane mode (on tablets) or a {@link LoadingSpinnerDetailActivity}
+ * This fragment is either contained in a {@link com.jebalialaeddine.android.loadingspinner.ui.activity.LoadingSpinnerListActivity}
+ * in two-pane mode (on tablets) or a {@link com.jebalialaeddine.android.loadingspinner.ui.activity.LoadingSpinnerDetailActivity}
  * on handsets.
  */
 public class LoadingSpinnerDetailFragment extends Fragment {

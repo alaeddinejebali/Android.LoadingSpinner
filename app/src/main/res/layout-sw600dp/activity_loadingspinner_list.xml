@@ -12,7 +12,7 @@
     -->
 
     <fragment android:id="@+id/loadingspinner_list"
-        android:name="com.jebalialaeddine.android.loadingspinner.LoadingSpinnerListFragment"
+        android:name="com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerListFragment"
         android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
         tools:layout="@android:layout/list_content" />
 

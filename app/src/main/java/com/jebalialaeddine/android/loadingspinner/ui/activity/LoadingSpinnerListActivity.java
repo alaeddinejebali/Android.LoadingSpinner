@@ -1,8 +1,12 @@
-package com.jebalialaeddine.android.loadingspinner;
+package com.jebalialaeddine.android.loadingspinner.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+
+import com.jebalialaeddine.android.loadingspinner.R;
+import com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerListFragment;
 
 
 /**
@@ -14,11 +18,11 @@ import android.support.v4.app.FragmentActivity;
  * item details side-by-side using two vertical panes.
  * <p/>
  * The activity makes heavy use of fragments. The list of items is a
- * {@link LoadingSpinnerListFragment} and the item details
- * (if present) is a {@link LoadingSpinnerDetailFragment}.
+ * {@link com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerListFragment} and the item details
+ * (if present) is a {@link com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerDetailFragment}.
  * <p/>
  * This activity also implements the required
- * {@link LoadingSpinnerListFragment.Callbacks} interface
+ * {@link com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerListFragment.Callbacks} interface
  * to listen for item selections.
  */
 public class LoadingSpinnerListActivity extends FragmentActivity
@@ -29,6 +33,7 @@ public class LoadingSpinnerListActivity extends FragmentActivity
      * device.
      */
     private boolean mTwoPane;
+    public static String TAG = "listActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +63,21 @@ public class LoadingSpinnerListActivity extends FragmentActivity
      */
     @Override
     public void onItemSelected(String id) {
-        if (mTwoPane) {
+        Log.w(TAG, "LoadingSpinnerListActivity.onItemSelected: " + id);
+        switch (id){
+            case "1":
+                Log.i(TAG, "onItemSelected(1), show 01 - ProgressDialog Fragment");
+                Intent progressDialogIntent = new Intent(this, ProgressDialogActivity.class);
+                startActivity(progressDialogIntent);
+                break;
+            case "2":
+                Log.i(TAG, "onItemSelected(2)");
+                break;
+            case "3":
+                Log.i(TAG, "onItemSelected(3)");
+                break;
+        }
+/*        if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
@@ -76,6 +95,6 @@ public class LoadingSpinnerListActivity extends FragmentActivity
             Intent detailIntent = new Intent(this, LoadingSpinnerDetailActivity.class);
             detailIntent.putExtra(LoadingSpinnerDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
-        }
+        }*/
     }
 }

@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".LoadingSpinnerListActivity"
+            android:name=".ui.activity.LoadingSpinnerListActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,12 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoadingSpinnerDetailActivity"
+            android:name=".ui.activity.LoadingSpinnerDetailActivity"
             android:label="@string/title_loadingspinner_detail"
-            android:parentActivityName=".LoadingSpinnerListActivity" >
+            android:parentActivityName=".ui.activity.LoadingSpinnerListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoadingSpinnerListActivity" />
+                android:value=".ui.activity.LoadingSpinnerListActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.ProgressDialogActivity"
+            android:label="@string/title_activity_progress_dialog" >
         </activity>
     </application>
 

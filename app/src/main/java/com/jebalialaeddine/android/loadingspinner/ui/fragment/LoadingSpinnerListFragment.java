@@ -1,4 +1,4 @@
-package com.jebalialaeddine.android.loadingspinner;
+package com.jebalialaeddine.android.loadingspinner.ui.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
