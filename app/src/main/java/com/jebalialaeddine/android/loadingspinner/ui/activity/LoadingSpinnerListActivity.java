@@ -1,12 +1,13 @@
 package com.jebalialaeddine.android.loadingspinner.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 
 import com.jebalialaeddine.android.loadingspinner.R;
 import com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerListFragment;
+import com.jebalialaeddine.android.loadingspinner.ui.fragment.ProgressDialogFragment;
 
 
 /**
@@ -18,13 +19,12 @@ import com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerList
  * <p/>
  * The activity makes heavy use of fragments. The list of items is a
  * {@link com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerListFragment} and the item details
- * (if present) is a {@link com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerDetailFragment}.
  * <p/>
  * This activity also implements the required
  * {@link com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class LoadingSpinnerListActivity extends FragmentActivity
+public class LoadingSpinnerListActivity extends ActionBarActivity
         implements LoadingSpinnerListFragment.Callbacks {
 
     /**
@@ -52,7 +52,8 @@ public class LoadingSpinnerListActivity extends FragmentActivity
                     .setActivateOnItemClick(true);
         }
 
-        // TODO: If exposing deep links into your app, handle intents here.
+        getSupportActionBar().setTitle(R.string.loading_spinner_title);
+        getSupportActionBar().show();
     }
 
     /**
@@ -65,8 +66,14 @@ public class LoadingSpinnerListActivity extends FragmentActivity
         switch (id){
             case "1":
                 Log.i(TAG, "onItemSelected(1), show 01 - ProgressDialog Fragment");
+                /*
                 Intent progressDialogIntent = new Intent(this, ProgressDialogActivity.class);
                 startActivity(progressDialogIntent);
+                */
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ProgressDialogFragment progressDialogFragment = ProgressDialogFragment.newInstance("5", "my title");
+                ft.replace(R.id.loadingspinner_detail_container, progressDialogFragment);
+                ft.commit();
                 break;
             case "2":
                 Log.i(TAG, "onItemSelected(2)");
