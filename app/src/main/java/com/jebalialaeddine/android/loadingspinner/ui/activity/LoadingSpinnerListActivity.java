@@ -38,6 +38,7 @@ public class LoadingSpinnerListActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loadingspinner_list);
+        setContentView(R.layout.fragment_loadingspinner_detail);
 
         if (findViewById(R.id.loadingspinner_detail_container) != null) {
             // The detail container view will be present only in the
