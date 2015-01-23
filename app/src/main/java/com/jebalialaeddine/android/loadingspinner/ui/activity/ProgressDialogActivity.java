@@ -2,12 +2,12 @@ package com.jebalialaeddine.android.loadingspinner.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jebalialaeddine.android.loadingspinner.R;
-import com.jebalialaeddine.android.loadingspinner.ui.fragment.LoadingSpinnerDetailFragment;
-import com.jebalialaeddine.android.loadingspinner.ui.fragment.ProgressDialogFragment;
+import com.jebalialaeddine.android.loadingspinner.items.Examples;
 
 public class ProgressDialogActivity extends ActionBarActivity {
 
@@ -16,23 +16,12 @@ public class ProgressDialogActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_progress_dialog);
 
-        setContentView(R.layout.activity_loadingspinner_detail);
+        setContentView(R.layout.activity_progress_dialog);
 
         // Show the Up button in the action bar.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(Examples.ITEMS.get(0).content != null) getSupportActionBar().setTitle(  Examples.ITEMS.get(0).content );
 
-        if (savedInstanceState == null) {
-            Bundle arguments = new Bundle();
-            arguments.putString(LoadingSpinnerDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(LoadingSpinnerDetailFragment.ARG_ITEM_ID));
-            //LoadingSpinnerDetailFragment fragment = new LoadingSpinnerDetailFragment();
-            ProgressDialogFragment fragment = new ProgressDialogFragment();
-
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_progress_dialog, fragment)
-                    .commit();
-        }
     }
 
 
@@ -49,6 +38,8 @@ public class ProgressDialogActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Log.w("hhhhhhhhhhhhhhhh", "----------------->id = " + id);
+        finish();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {

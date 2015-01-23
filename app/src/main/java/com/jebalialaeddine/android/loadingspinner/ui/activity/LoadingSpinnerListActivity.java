@@ -47,8 +47,7 @@ public class LoadingSpinnerListActivity extends FragmentActivity
             // activity should be in two-pane mode.
             mTwoPane = true;
 
-            // In two-pane mode, list items should be given the
-            // 'activated' state when touched.
+            // In two-pane mode, list items should be given the 'activated' state when touched.
             ((LoadingSpinnerListFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.loadingspinner_list))
                     .setActivateOnItemClick(true);
@@ -77,24 +76,5 @@ public class LoadingSpinnerListActivity extends FragmentActivity
                 Log.i(TAG, "onItemSelected(3)");
                 break;
         }
-/*        if (mTwoPane) {
-            // In two-pane mode, show the detail view in this activity by
-            // adding or replacing the detail fragment using a
-            // fragment transaction.
-            Bundle arguments = new Bundle();
-            arguments.putString(LoadingSpinnerDetailFragment.ARG_ITEM_ID, id);
-            LoadingSpinnerDetailFragment fragment = new LoadingSpinnerDetailFragment();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.loadingspinner_detail_container, fragment)
-                    .commit();
-
-        } else {
-            // In single-pane mode, simply start the detail activity
-            // for the selected item ID.
-            Intent detailIntent = new Intent(this, LoadingSpinnerDetailActivity.class);
-            detailIntent.putExtra(LoadingSpinnerDetailFragment.ARG_ITEM_ID, id);
-            startActivity(detailIntent);
-        }*/
     }
 }
