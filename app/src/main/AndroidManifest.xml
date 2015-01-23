@@ -17,14 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.LoadingSpinnerDetailActivity"
-            android:label="@string/title_loadingspinner_detail"
-            android:parentActivityName=".ui.activity.LoadingSpinnerListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LoadingSpinnerListActivity" />
-        </activity>
-        <activity
             android:name=".ui.activity.ProgressDialogActivity"
             android:label="@string/title_activity_progress_dialog" >
         </activity>
